@@ -29,8 +29,6 @@ export function parseUrl(state: ProxyState) {
     url = `${protocol}://${url.split("://")[1]}`;
   }
 
-  console.log({ secure, url, protocol, rSecure: req.secure });
-
   url = `${url.replace(/\/$/, "")}${req.url}`;
 
   return new URL(url);

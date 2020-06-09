@@ -39,8 +39,6 @@ export function proxy(
       .then(decorateSrcRes)
       .then(sendSrcRes)
       .catch((err) => {
-        console.log("catch", err);
-
         if (err) {
           const resolver = (state.options.proxyErrorHandler)
             ? state.options.proxyErrorHandler
