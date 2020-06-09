@@ -1,7 +1,7 @@
 .PHONY: build ci doc fmt fmt-check lock precommit test typedoc
 
 build:
-	@deno run --lock=lock.json --reload mod.ts
+	@deno run --allow-net --allow-read --lock=lock.json --reload mod.ts
 
 ci:
 	@make fmt-check
@@ -18,7 +18,7 @@ fmt-check:
 	@deno fmt --check
 
 lock:
-	@deno run --lock=lock.json --lock-write --reload mod.ts
+	@deno run --allow-net --allow-read --lock=lock.json --lock-write --reload mod.ts
 
 precommit:
 	@make lock
