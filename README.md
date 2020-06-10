@@ -31,13 +31,13 @@ import { proxy } from "https://deno.land/x/opineHttpProxy@master/mod.ts";
 If you want to use a specific version of opine-http-proxy, just modify the import url to contain the version:
 
 ```ts
-import { proxy } from "https://deno.land/x/opineHttpProxy@0.3.0/mod.ts";
+import { proxy } from "https://deno.land/x/opineHttpProxy@1.0.0/mod.ts";
 ```
 
 Or if you want to use a specific commit of opine-http-proxy, just modify the import url to contain the commit hash:
 
 ```ts
-import { proxy } from "https://deno.land/x/opineHttpProxy@c21f8d6/mod.ts";
+import { proxy } from "https://deno.land/x/opineHttpProxy@627326/mod.ts";
 ```
 
 ## Docs
@@ -47,7 +47,7 @@ import { proxy } from "https://deno.land/x/opineHttpProxy@c21f8d6/mod.ts";
 - [License](https://github.com/asos-craigmorten/opine-http-proxy/blob/master/LICENSE.md)
 - [Changelog](https://github.com/asos-craigmorten/opine-http-proxy/blob/master/.github/CHANGELOG.md)
 
-## Usage
+## Usage
 
 ### URL
 
