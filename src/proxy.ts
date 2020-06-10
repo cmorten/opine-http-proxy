@@ -15,6 +15,29 @@ import { decorateSrcRes } from "./steps/decorateSrcRes.ts";
 import { sendSrcRes } from "./steps/sendSrcRes.ts";
 import { handleProxyErrors } from "./steps/handleProxyErrors.ts";
 
+/**
+ * Takes a url argument that can be a string, URL or a function
+ * that returns one of the previous to proxy requests to. The
+ * remaining path from a request that has not been matched by
+ * Opine will be appended to the provided url when making the
+ * proxy request.
+ * 
+ * Also accepts optional options configuration allowing the user
+ * to modified all aspects of proxied request via option
+ * properties or a series of hooks allowing decoration of the
+ * outbound request and the inbound response objects.
+ * 
+ * Requests and responses can also be filtered via the `filterReq`
+ * and `filterRes` function options, allowing requests to bypass
+ * the proxy. Internally this is achieved by calling the Opine
+ * `next()` method to delegate to the next Opine middleware.
+ * 
+ * @param {string|URL|ProxyUrlFunction} url
+ * @param {ProxyOptions} options 
+ * 
+ * @returns {Function} Opine proxy middleware
+ * @public
+ */
 export function proxy(
   url: string | URL | ProxyUrlFunction,
   options: ProxyOptions = {},

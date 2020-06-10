@@ -89,9 +89,26 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/asos-craigmorten/opine-http-proxy/blob/3e9459e/src/proxy.ts#L18">git/asos-craigmorten/opine-http-proxy/src/proxy.ts:18</a></li>
+									<li>Defined in <a href="https://github.com/asos-craigmorten/opine-http-proxy/blob/de516b8/src/proxy.ts#L41">git/asos-craigmorten/opine-http-proxy/src/proxy.ts:41</a></li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Takes a url argument that can be a string, URL or a function
+										that returns one of the previous to proxy requests to. The
+										remaining path from a request that has not been matched by
+										Opine will be appended to the provided url when making the
+									proxy request.</p>
+								</div>
+								<p>Also accepts optional options configuration allowing the user
+									to modified all aspects of proxied request via option
+									properties or a series of hooks allowing decoration of the
+								outbound request and the inbound response objects.</p>
+								<p>Requests and responses can also be filtered via the <code>filterReq</code>
+									and <code>filterRes</code> function options, allowing requests to bypass
+									the proxy. Internally this is achieved by calling the Opine
+								<code>next()</code> method to delegate to the next Opine middleware.</p>
+							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
@@ -99,9 +116,12 @@
 								</li>
 								<li>
 									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> options: <a href="../interfaces/_resolveoptions_.proxyoptions.html" class="tsd-signature-type">ProxyOptions</a><span class="tsd-signature-symbol"> = {}</span></h5>
+									<div class="tsd-comment tsd-typography">
+									</div>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">handleProxy</span></h4>
+							<p>Opine proxy middleware</p>
 						</li>
 					</ul>
 				</section>
