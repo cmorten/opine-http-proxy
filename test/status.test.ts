@@ -3,24 +3,24 @@ import { superdeno, opine, expect } from "./deps.ts";
 import { proxy } from "../mod.ts";
 
 describe("proxies status code", () => {
-  const mockEndpointPort = 21239;
-  const proxyServer = opine();
-  proxyServer.use(proxy(`http://localhost:${mockEndpointPort}`));
-
   [304, 404, 200, 401, 500].forEach((status) => {
     it(`should handle a "${status}" proxied status code`, (done) => {
-      const mockEndpoint = opine();
+      const target = opine();
 
-      mockEndpoint.use("/status/:status", (req, res) => {
+      target.use("/status/:status", (req, res) => {
         res.sendStatus(parseInt(req.params.status));
       });
 
-      const server = mockEndpoint.listen(mockEndpointPort);
+      const targetServer = target.listen();
+      const targetPort = (targetServer.listener.addr as Deno.NetAddr).port;
+
+      const proxyServer = opine();
+      proxyServer.use(proxy(`http://localhost:${targetPort}`));
 
       superdeno(proxyServer)
         .get(`/status/${status}`)
-        .end((_err, res) => {
-          server.close();
+        .end((err, res) => {
+          targetServer.close();
           expect(res.status).toEqual(status);
           done();
         });
