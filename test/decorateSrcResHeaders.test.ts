@@ -1,7 +1,5 @@
 import { describe, it } from "./support/utils.ts";
-import { proxyTarget } from "./support/proxyTarget.ts";
 import { superdeno, opine, expect } from "./deps.ts";
-import { Request, Response } from "../deps.ts";
 import { proxy } from "../mod.ts";
 
 describe("when userResHeaderDecorator is defined", () => {

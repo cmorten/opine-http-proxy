@@ -1,8 +1,3 @@
-import {
-  Request as OpineRequest,
-  Response as OpineResponse,
-  NextFunction,
-} from "../deps.ts";
 import { isUnset } from "./isUnset.ts";
 
 /**
@@ -24,8 +19,8 @@ export interface ProxyOptions
    * @public
    */
   filterReq?: (
-    req: OpineRequest,
-    res: OpineResponse,
+    req: any,
+    res: any,
   ) => boolean | Promise<boolean>;
 
   /**
@@ -35,8 +30,8 @@ export interface ProxyOptions
    */
   proxyErrorHandler?: (
     err: any,
-    res: OpineResponse,
-    next: NextFunction,
+    res: any,
+    next: any,
   ) => any;
 
   /**
@@ -44,7 +39,7 @@ export interface ProxyOptions
    * 
    * @public
    */
-  proxyReqUrlDecorator?: (url: URL, req?: OpineRequest) => URL | Promise<URL>;
+  proxyReqUrlDecorator?: (url: URL, req?: any) => URL | Promise<URL>;
 
   /**
    * Decorate the outbound proxied request initialization options.
@@ -55,7 +50,7 @@ export interface ProxyOptions
    */
   proxyReqInitDecorator?: (
     proxyReqOpts: RequestInit,
-    srcReq: OpineRequest,
+    srcReq: any,
   ) => RequestInit | Promise<RequestInit>;
 
   /**
@@ -65,8 +60,8 @@ export interface ProxyOptions
    */
   srcResHeaderDecorator?: (
     headers: Headers,
-    srcReq: OpineRequest,
-    srcRes: OpineResponse,
+    srcReq: any,
+    srcRes: any,
     proxyReq: Request,
     proxyRes: Response,
   ) => Headers;
@@ -77,8 +72,8 @@ export interface ProxyOptions
    * @public
    */
   srcResDecorator?: (
-    srcReq: OpineRequest,
-    srcRes: OpineResponse,
+    srcReq: any,
+    srcRes: any,
     proxyRes: Response,
     proxyResData: any,
   ) => any;

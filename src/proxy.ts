@@ -1,4 +1,3 @@
-import { Request, Response, NextFunction } from "../deps.ts";
 import { ProxyOptions } from "./resolveOptions.ts";
 import { createState, ProxyUrlFunction } from "./createState.ts";
 import { filterSrcReq } from "./steps/filterSrcReq.ts";
@@ -43,9 +42,9 @@ export function proxy(
   options: ProxyOptions = {},
 ) {
   return function handleProxy(
-    req: Request,
-    res: Response,
-    next: NextFunction,
+    req: any,
+    res: any,
+    next: any,
   ) {
     const state = createState(req, res, next, url, options);
 

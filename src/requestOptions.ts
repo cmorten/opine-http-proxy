@@ -1,4 +1,4 @@
-import { Request, Response, NextFunction, read, join } from "../deps.ts";
+import { read } from "../deps.ts";
 import { ProxyState } from "./createState.ts";
 import { ProxyOptions } from "./resolveOptions.ts";
 
@@ -56,7 +56,7 @@ function extendHeaders(
 
 const parseRawBody = (body: any) => body;
 
-async function getBody(req: Request, res: Response) {
+async function getBody(req: any, res: any) {
   if (req.parsedBody) {
     return req.parsedBody;
   }

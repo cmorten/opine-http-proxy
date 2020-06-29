@@ -1,18 +1,17 @@
 import { describe, it } from "./support/utils.ts";
 import { proxyTarget } from "./support/proxyTarget.ts";
 import { superdeno, opine } from "./deps.ts";
-import { Request, Response, NextFunction } from "../deps.ts";
 import { proxy } from "../mod.ts";
 
 const proxyRouteFn = [{
   method: "get",
   path: "/",
-  fn: (req: Request, res: Response) => {
+  fn: (req: any, res: any) => {
     return res.setStatus(200).send("Proxy Server");
   },
 }];
 
-function nextMethod(req: Request, res: Response, next: NextFunction) {
+function nextMethod(req: any, res: any, next: any) {
   res.setStatus(201).send("Client Application");
 }
 

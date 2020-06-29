@@ -5,6 +5,7 @@ Setup:
 - Deno Version: <replace_with_deno_version (try `deno --version`)>
 - v8 Version: <replace_with_v8_version>
 - Typescript Version: <replace_with_typescript_version>
+- Opine HTTP Proxy Version: <replace_with_opine_http_proxy_version>
 - Opine Version: <replace_with_opine_version>
 
 > Please replace this line with a short description of the issue.

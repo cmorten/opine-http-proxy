@@ -1,13 +1,9 @@
 import { ProxyState } from "../createState.ts";
 import { asBuffer } from "../requestOptions.ts";
-import {
-  Request as OpineRequest,
-  Response as OpineResponse,
-} from "../../deps.ts";
 
 const defaultDecorator = (
-  _req: OpineRequest,
-  _res: OpineResponse,
+  _req: any,
+  _res: any,
   _proxyRes: Response,
   proxyResData: any,
 ) => proxyResData;

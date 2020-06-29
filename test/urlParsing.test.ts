@@ -1,14 +1,13 @@
 import { describe, it } from "./support/utils.ts";
 import { proxyTarget } from "./support/proxyTarget.ts";
 import { superdeno, opine } from "./deps.ts";
-import { Request, Response } from "../deps.ts";
 import { proxy } from "../mod.ts";
 
 const proxyRouteFn = [
   {
     method: "get",
     path: "/",
-    fn: (req: Request, res: Response) => {
+    fn: (req: any, res: any) => {
       res.send("Hello Deno");
     },
   },

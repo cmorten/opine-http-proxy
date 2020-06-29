@@ -1,7 +1,6 @@
 import { describe, it } from "./support/utils.ts";
 import { proxyTarget } from "./support/proxyTarget.ts";
 import { superdeno, opine, expect } from "./deps.ts";
-import { Request, Response } from "../deps.ts";
 import { proxy } from "../mod.ts";
 
 const proxyRoutes = [
@@ -22,7 +21,7 @@ describe("url: string", () => {
       const proxyRouteFn = {
         method: "get",
         path: modifiedPath,
-        fn: (req: Request, res: Response) => {
+        fn: (req: any, res: any) => {
           res.json({ path, modifiedPath });
         },
       };
@@ -56,7 +55,7 @@ describe("url: URL", () => {
       const proxyRouteFn = {
         method: "get",
         path: modifiedPath,
-        fn: (req: Request, res: Response) => {
+        fn: (req: any, res: any) => {
           res.json({ path, modifiedPath });
         },
       };

@@ -1,7 +1,6 @@
 import { describe, it } from "./support/utils.ts";
 import { proxyTarget } from "./support/proxyTarget.ts";
 import { superdeno, opine, expect } from "./deps.ts";
-import { Request, Response } from "../deps.ts";
 import { proxy } from "../mod.ts";
 
 const REMOTE_SERVER_LATENCY = 500;
@@ -29,7 +28,7 @@ const proxyRouteFn = [
   {
     method: "get",
     path: "/:errorCode",
-    fn: async (req: Request, res: Response) => {
+    fn: async (req: any, res: any) => {
       setTimeout(() => {
         timeoutManager.resolver();
 

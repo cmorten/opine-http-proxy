@@ -1,16 +1,11 @@
-import {
-  Request as OpineRequest,
-  Response as OpineResponse,
-  NextFunction,
-} from "../deps.ts";
 import { resolveOptions, ProxyOptions } from "./resolveOptions.ts";
 
-export interface ProxyUrlFunction<Req = OpineRequest> {
+export interface ProxyUrlFunction<Req = any> {
   (req: Req): string | URL;
 }
 
 interface ProxyParams<
-  Req = OpineRequest,
+  Req = any,
   ProxyUrl = string | URL | ProxyUrlFunction<Req>,
   Opts = ProxyOptions,
 > {
@@ -18,7 +13,7 @@ interface ProxyParams<
   options: Opts;
 }
 
-interface Source<Req = OpineRequest, Res = OpineResponse, Next = NextFunction> {
+interface Source<Req = any, Res = any, Next = any> {
   req: Req;
   res: Res;
   next: Next;
@@ -33,9 +28,9 @@ interface Proxy {
 }
 
 export interface ProxyState<
-  Req = OpineRequest,
-  Res = OpineResponse,
-  Next = NextFunction,
+  Req = any,
+  Res = any,
+  Next = any,
   ProxyUrl = string | URL | ProxyUrlFunction<Req>,
   Opts = ProxyOptions,
 > {
@@ -46,9 +41,9 @@ export interface ProxyState<
 }
 
 export function createState<
-  Req = OpineRequest,
-  Res = OpineResponse,
-  Next = NextFunction,
+  Req = any,
+  Res = any,
+  Next = any,
   ProxyUrl = string | URL | ProxyUrlFunction<Req>,
   Opts = ProxyOptions,
 >(
