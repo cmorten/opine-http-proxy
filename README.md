@@ -6,8 +6,8 @@ Proxy middleware for Deno Opine HTTP servers.
 ![GitHub stars](https://img.shields.io/github/stars/asos-craigmorten/opine-http-proxy) ![GitHub forks](https://img.shields.io/github/forks/asos-craigmorten/opine-http-proxy) ![opine-http-proxy License](https://img.shields.io/github/license/asos-craigmorten/opine-http-proxy) [![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://GitHub.com/asos-craigmorten/opine-http-proxy/graphs/commit-activity) [![HitCount](http://hits.dwyl.com/asos-craigmorten/opine-http-proxy.svg)](http://hits.dwyl.com/asos-craigmorten/opine-http-proxy)
 
 ```ts
-import { proxy } from "https://deno.land/x/opineHttpProxy@master/mod.ts";
-import { opine } from "https://deno.land/x/opine@0.8.0/mod.ts";
+import { proxy } from "https://deno.land/x/opineHttpProxy@main/mod.ts";
+import { opine } from "https://deno.land/x/opine@0.19.1/mod.ts";
 
 const app = opine();
 
@@ -25,13 +25,13 @@ Before importing, [download and install Deno](https://deno.land/#installation).
 You can then import opine-http-proxy straight into your project:
 
 ```ts
-import { proxy } from "https://deno.land/x/opineHttpProxy@master/mod.ts";
+import { proxy } from "https://deno.land/x/opineHttpProxy@main/mod.ts";
 ```
 
 If you want to use a specific version of opine-http-proxy, just modify the import url to contain the version:
 
 ```ts
-import { proxy } from "https://deno.land/x/opineHttpProxy@1.0.0/mod.ts";
+import { proxy } from "https://deno.land/x/opineHttpProxy@2.0.0/mod.ts";
 ```
 
 Or if you want to use a specific commit of opine-http-proxy, just modify the import url to contain the commit hash:
@@ -44,8 +44,8 @@ import { proxy } from "https://deno.land/x/opineHttpProxy@627326/mod.ts";
 
 - [opine-http-proxy Type Docs](https://asos-craigmorten.github.io/opine-http-proxy/)
 - [opine-http-proxy Deno Docs](https://doc.deno.land/https/deno.land/x/opineHttpProxy/mod.ts)
-- [License](https://github.com/asos-craigmorten/opine-http-proxy/blob/master/LICENSE.md)
-- [Changelog](https://github.com/asos-craigmorten/opine-http-proxy/blob/master/.github/CHANGELOG.md)
+- [License](https://github.com/asos-craigmorten/opine-http-proxy/blob/main/LICENSE.md)
+- [Changelog](https://github.com/asos-craigmorten/opine-http-proxy/blob/main/.github/CHANGELOG.md)
 
 ## Usage
 
@@ -402,7 +402,7 @@ app.use(
 
 ## Contributing
 
-[Contributing guide](https://github.com/asos-craigmorten/opine-http-proxy/blob/master/.github/CONTRIBUTING.md)
+[Contributing guide](https://github.com/asos-craigmorten/opine-http-proxy/blob/main/.github/CONTRIBUTING.md)
 
 ---
 
