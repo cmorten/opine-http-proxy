@@ -1,4 +1,4 @@
-.PHONY: build ci doc fmt fmt-check lock precommit test typedoc
+.PHONY: build ci doc fmt fmt-check lint lock precommit test typedoc
 
 build:
 	@deno run --allow-net --allow-read --lock=lock.json --reload mod.ts
@@ -17,6 +17,9 @@ fmt:
 fmt-check:
 	@deno fmt --check
 
+lint:
+	@deno lint --unstable
+
 lock:
 	@deno run --allow-net --allow-read --lock=lock.json --lock-write --reload mod.ts
 
@@ -30,5 +33,8 @@ test:
 	@deno test --allow-net --allow-read
 
 typedoc:
-	@typedoc --ignoreCompilerErrors --out ./docs --mode modules --includeDeclarations --excludeExternals ./src
-
+	@rm -rf docs
+	@typedoc --ignoreCompilerErrors --out ./docs --mode modules --includeDeclarations --excludeExternals --name opine-http-proxy ./src
+	@make fmt
+	@make fmt
+	@echo 'future: true\nencoding: "UTF-8"\ninclude:\n  - "_*_.html"\n  - "_*_.*.html"' > ./docs/_config.yaml
