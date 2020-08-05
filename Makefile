@@ -1,4 +1,4 @@
-.PHONY: build ci doc fmt fmt-check lint lock precommit test typedoc
+.PHONY: build ci deps doc fmt fmt-check lint lock precommit test typedoc
 
 build:
 	@deno run --allow-net --allow-read --lock=lock.json --reload mod.ts
@@ -7,6 +7,9 @@ ci:
 	@make fmt-check
 	@make build
 	@make test
+
+deps:
+	@npm install -g typescript typedoc
 
 doc:
 	@deno doc ./mod.ts
