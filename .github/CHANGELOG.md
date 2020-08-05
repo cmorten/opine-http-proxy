@@ -1,5 +1,11 @@
 # ChangeLog
 
+## [2.1.0] - 05-08-2020
+
+- feat: upgrade Deno, std and other dep versions.
+- chore: add typedoc automation
+- docs: remove reference to importing commit or branch from readme as not supported by Deno registry v2.
+
 ## [2.0.0] - 16-07-2020
 
 - feat: update to Deno `1.2.0` (breaking upgrade), std `0.61.0` and other dep upgrades.
