@@ -1,5 +1,11 @@
 # ChangeLog
 
+## [2.2.0] - 26-08-2020
+
+- feat: update to Deno `1.3.1`, std `0.66.0` and other dep upgrades.
+- test: added Windows and MacOS to workflow tests.
+- fix: correctly handle null response bodies.
+
 ## [2.1.0] - 05-08-2020
 
 - feat: upgrade Deno, std and other dep versions.
