@@ -1,4 +1,4 @@
-import { ProxyState } from "../createState.ts";
+import type { ProxyState } from "../createState.ts";
 
 const defaultFilter = () => false;
 

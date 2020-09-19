@@ -1,4 +1,4 @@
-import { ProxyState } from "../createState.ts";
+import type { ProxyState } from "../createState.ts";
 
 export function copyProxyResHeadersToUserRes(state: ProxyState) {
   const res = state.src.res;

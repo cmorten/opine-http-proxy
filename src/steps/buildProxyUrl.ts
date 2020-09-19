@@ -1,4 +1,4 @@
-import { ProxyState } from "../createState.ts";
+import type { ProxyState } from "../createState.ts";
 import { parseUrl } from "../requestOptions.ts";
 
 export function buildProxyUrl(state: ProxyState) {

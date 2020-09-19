@@ -1,4 +1,4 @@
-import { ProxyState } from "../createState.ts";
+import type { ProxyState } from "../createState.ts";
 import { asBuffer, asBufferOrString } from "../requestOptions.ts";
 
 const encoder = new TextEncoder();

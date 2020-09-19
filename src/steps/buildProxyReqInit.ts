@@ -1,4 +1,4 @@
-import { ProxyState } from "../createState.ts";
+import type { ProxyState } from "../createState.ts";
 import { createRequestInit } from "../requestOptions.ts";
 
 export function buildProxyReqInit(state: ProxyState) {

@@ -1,4 +1,4 @@
-import { ProxyOptions } from "./resolveOptions.ts";
+import type { ProxyOptions } from "./resolveOptions.ts";
 import { createState, ProxyUrlFunction } from "./createState.ts";
 import { filterSrcReq } from "./steps/filterSrcReq.ts";
 import { buildProxyUrl } from "./steps/buildProxyUrl.ts";
