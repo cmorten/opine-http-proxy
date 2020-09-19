@@ -6,7 +6,7 @@ Proxy middleware for Deno Opine HTTP servers.
 ![GitHub stars](https://img.shields.io/github/stars/asos-craigmorten/opine-http-proxy) ![GitHub forks](https://img.shields.io/github/forks/asos-craigmorten/opine-http-proxy) ![opine-http-proxy License](https://img.shields.io/github/license/asos-craigmorten/opine-http-proxy) [![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://GitHub.com/asos-craigmorten/opine-http-proxy/graphs/commit-activity) [![HitCount](http://hits.dwyl.com/asos-craigmorten/opine-http-proxy.svg)](http://hits.dwyl.com/asos-craigmorten/opine-http-proxy)
 
 ```ts
-import { proxy } from "https://deno.land/x/opineHttpProxy@2.3.0/mod.ts";
+import { proxy } from "https://deno.land/x/opineHttpProxy@2.3.1/mod.ts";
 import { opine } from "https://deno.land/x/opine@0.22.1/mod.ts";
 
 const app = opine();
@@ -25,7 +25,7 @@ Before importing, [download and install Deno](https://deno.land/#installation).
 You can then import opine-http-proxy straight into your project:
 
 ```ts
-import { proxy } from "https://deno.land/x/opineHttpProxy@2.3.0/mod.ts";
+import { proxy } from "https://deno.land/x/opineHttpProxy@2.3.1/mod.ts";
 ```
 
 ## Docs
