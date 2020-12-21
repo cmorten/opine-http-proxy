@@ -1,4 +1,4 @@
-import { opine, json, urlencoded, Server } from "../deps.ts";
+import { json, opine, Server, urlencoded } from "../deps.ts";
 
 export function proxyTarget(
   { port = 0, handlers }: {

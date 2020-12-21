@@ -1,5 +1,5 @@
 import { describe, it } from "./support/utils.ts";
-import { superdeno, opine, json, urlencoded, expect } from "./deps.ts";
+import { expect, json, opine, superdeno, urlencoded } from "./deps.ts";
 import { proxy } from "../mod.ts";
 
 describe("when making a proxy request with a payload", () => {
@@ -44,8 +44,8 @@ describe("when making a proxy request with a payload", () => {
       target.use(json());
       target.use(urlencoded());
 
-      target.post("/", (req, res) => {
-        expect(req.parsedBody).toEqual({});
+      target.post("/", async (req, res) => {
+        expect(req.body).toEqual({});
         expect(req.headers.get("content-type")).toEqual(test.encoding);
         res.json({ message: "Hello Deno!" });
       });

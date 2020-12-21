@@ -1,3 +1,3 @@
 export { proxy } from "./src/proxy.ts";
 export type { ProxyOptions } from "./src/resolveOptions.ts";
-export { VERSION, DENO_SUPPORTED_VERSIONS } from "./version.ts";
+export { DENO_SUPPORTED_VERSIONS, VERSION } from "./version.ts";

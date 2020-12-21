@@ -1,5 +1,5 @@
 import { describe, it } from "./support/utils.ts";
-import { superdeno, opine, expect } from "./deps.ts";
+import { expect, opine, superdeno } from "./deps.ts";
 import { proxy } from "../mod.ts";
 
 describe("proxies https", () => {

@@ -1,5 +1,9 @@
 # ChangeLog
 
+## [2.4.0] - 21-12-2020
+
+- feat: update to Deno `1.6.1`, std `0.81.0` and other dep upgrades.
+
 ## [2.3.1] - 19-09-2020
 
 - chore: upgrade to eggs@0.2.2 in CI
