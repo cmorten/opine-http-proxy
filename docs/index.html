@@ -117,7 +117,7 @@ app.get(<span class="hljs-string">&quot;/function&quot;</span>, proxy(<span clas
 				<pre><code class="language-ts">app.use(
   <span class="hljs-string">&quot;/proxy&quot;</span>,
   proxy(<span class="hljs-string">&quot;www.google.com&quot;</span>, {
-    filterReq: <span class="hljs-function">(<span class="hljs-params">req, res</span>) =&gt;</span> {
+    <span class="hljs-attr">filterReq</span>: <span class="hljs-function">(<span class="hljs-params">req, res</span>) =&gt;</span> {
       <span class="hljs-keyword">return</span> req.method === <span class="hljs-string">&quot;GET&quot;</span>;
     },
   })
@@ -125,7 +125,7 @@ app.get(<span class="hljs-string">&quot;/function&quot;</span>, proxy(<span clas
 				<p>Promise form:</p>
 				<pre><code class="language-ts">app.use(
   proxy(<span class="hljs-string">&quot;localhost:12346&quot;</span>, {
-    filterReq: <span class="hljs-function">(<span class="hljs-params">req, res</span>) =&gt;</span> {
+    <span class="hljs-attr">filterReq</span>: <span class="hljs-function">(<span class="hljs-params">req, res</span>) =&gt;</span> {
       <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">Promise</span>(<span class="hljs-function">(<span class="hljs-params">resolve</span>) =&gt;</span> {
         resolve(req.method === <span class="hljs-string">&quot;GET&quot;</span>);
       });
@@ -140,7 +140,7 @@ app.get(<span class="hljs-string">&quot;/function&quot;</span>, proxy(<span clas
 				<pre><code class="language-ts">app.use(
   <span class="hljs-string">&quot;/proxy&quot;</span>,
   proxy(<span class="hljs-string">&quot;www.google.com&quot;</span>, {
-    srcResDecorator: <span class="hljs-function">(<span class="hljs-params">req, res, proxyRes, proxyResData</span>) =&gt;</span> {
+    <span class="hljs-attr">srcResDecorator</span>: <span class="hljs-function">(<span class="hljs-params">req, res, proxyRes, proxyResData</span>) =&gt;</span> {
       data = <span class="hljs-built_in">JSON</span>.parse(proxyResData.toString(<span class="hljs-string">&quot;utf8&quot;</span>));
       data.newProperty = <span class="hljs-string">&quot;exciting data&quot;</span>;
 
@@ -150,7 +150,7 @@ app.get(<span class="hljs-string">&quot;/function&quot;</span>, proxy(<span clas
 );</code></pre>
 				<pre><code class="language-ts">app.use(
   proxy(<span class="hljs-string">&quot;httpbin.org&quot;</span>, {
-    srcResDecorator: <span class="hljs-function">(<span class="hljs-params">req, res, proxyRes, proxyResData</span>) =&gt;</span> {
+    <span class="hljs-attr">srcResDecorator</span>: <span class="hljs-function">(<span class="hljs-params">req, res, proxyRes, proxyResData</span>) =&gt;</span> {
       <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">Promise</span>(<span class="hljs-function">(<span class="hljs-params">resolve</span>) =&gt;</span> {
         proxyResData.message = <span class="hljs-string">&quot;Hello Deno!&quot;</span>;
 
@@ -187,7 +187,7 @@ app.get(<span class="hljs-string">&quot;/function&quot;</span>, proxy(<span clas
 
 app.use(
   proxy(getUrl, {
-    memoizeUrl: <span class="hljs-literal">false</span>,
+    <span class="hljs-attr">memoizeUrl</span>: <span class="hljs-literal">false</span>,
   })
 );</code></pre>
 				<p>In this example, when <code>memoizeUrl: false</code>, the coinToss occurs on each request, and each request could get either value.</p>
@@ -199,7 +199,7 @@ app.use(
 				<pre><code class="language-ts">app.use(
   <span class="hljs-string">&quot;/proxy&quot;</span>,
   proxy(<span class="hljs-string">&quot;www.google.com&quot;</span>, {
-    srcResHeaderDecorator(headers, req, res, proxyReq, proxyRes) {
+    <span class="hljs-function"><span class="hljs-title">srcResHeaderDecorator</span>(<span class="hljs-params">headers, req, res, proxyReq, proxyRes</span>)</span> {
       <span class="hljs-keyword">return</span> headers;
     },
   })
@@ -211,7 +211,7 @@ app.use(
 				<pre><code class="language-ts">app.use(
   <span class="hljs-string">&quot;/proxy&quot;</span>,
   proxy(<span class="hljs-string">&quot;www.google.com&quot;</span>, {
-    filterRes(proxyRes) {
+    <span class="hljs-function"><span class="hljs-title">filterRes</span>(<span class="hljs-params">proxyRes</span>)</span> {
       <span class="hljs-keyword">return</span> proxyRes.status === <span class="hljs-number">404</span>;
     },
   })
@@ -225,7 +225,7 @@ app.use(
 
 app.use(
   proxy(<span class="hljs-string">&quot;localhost:12346&quot;</span>, {
-    proxyErrorHandler(err, res, next) {
+    <span class="hljs-function"><span class="hljs-title">proxyErrorHandler</span>(<span class="hljs-params">err, res, next</span>)</span> {
       next(err);
     },
   })
@@ -235,7 +235,7 @@ app.use(
 
 app.use(
   proxy(<span class="hljs-string">&quot;localhost:12346&quot;</span>, {
-    proxyErrorHandler(err, res, next) {
+    <span class="hljs-function"><span class="hljs-title">proxyErrorHandler</span>(<span class="hljs-params">err, res, next</span>)</span> {
       <span class="hljs-keyword">switch</span> (err &amp;&amp; err.code) {
         <span class="hljs-keyword">case</span> <span class="hljs-string">&quot;ECONNRESET&quot;</span>: {
           <span class="hljs-keyword">return</span> res.sendStatus(<span class="hljs-number">405</span>);
@@ -243,7 +243,7 @@ app.use(
         <span class="hljs-keyword">case</span> <span class="hljs-string">&quot;ECONNREFUSED&quot;</span>: {
           <span class="hljs-keyword">return</span> res.sendStatus(<span class="hljs-number">200</span>);
         }
-        <span class="hljs-keyword">default</span>: {
+        <span class="hljs-attr">default</span>: {
           next(err);
         }
       }
@@ -258,7 +258,7 @@ app.use(
 				<pre><code class="language-ts">app.use(
   <span class="hljs-string">&quot;/proxy&quot;</span>,
   proxy(<span class="hljs-string">&quot;www.google.com&quot;</span>, {
-    proxyReqUrlDecorator(url, req) {
+    <span class="hljs-function"><span class="hljs-title">proxyReqUrlDecorator</span>(<span class="hljs-params">url, req</span>)</span> {
       url.pathname = <span class="hljs-string">&quot;/&quot;</span>;
 
       <span class="hljs-keyword">return</span> url;
@@ -269,7 +269,7 @@ app.use(
 				<pre><code class="language-ts">app.use(
   <span class="hljs-string">&quot;/proxy&quot;</span>,
   proxy(<span class="hljs-string">&quot;localhost:3000&quot;</span>, {
-    proxyReqOptDecorator(url, req) {
+    <span class="hljs-function"><span class="hljs-title">proxyReqOptDecorator</span>(<span class="hljs-params">url, req</span>)</span> {
       <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">Promise</span>(<span class="hljs-function">(<span class="hljs-params">resolve, reject</span>) =&gt;</span> {
         <span class="hljs-keyword">if</span> (url.pathname === <span class="hljs-string">&quot;/login&quot;</span>) {
           url.port = <span class="hljs-number">8080</span>;
@@ -288,7 +288,7 @@ app.use(
 				<pre><code class="language-ts">app.use(
   <span class="hljs-string">&quot;/proxy&quot;</span>,
   proxy(<span class="hljs-string">&quot;www.google.com&quot;</span>, {
-    proxyReqInitDecorator(proxyReqOpts, srcReq) {
+    <span class="hljs-function"><span class="hljs-title">proxyReqInitDecorator</span>(<span class="hljs-params">proxyReqOpts, srcReq</span>)</span> {
       <span class="hljs-comment">// you can update headers</span>
       proxyReqOpts.headers.set(<span class="hljs-string">&quot;Content-Type&quot;</span>, <span class="hljs-string">&quot;text/html&quot;</span>);
       <span class="hljs-comment">// you can change the method</span>
@@ -302,7 +302,7 @@ app.use(
 				<pre><code class="language-ts">app.use(
   <span class="hljs-string">&quot;/proxy&quot;</span>,
   proxy(<span class="hljs-string">&quot;www.google.com&quot;</span>, {
-    proxyReqOptDecorator(proxyReqOpts, srcReq) {
+    <span class="hljs-function"><span class="hljs-title">proxyReqOptDecorator</span>(<span class="hljs-params">proxyReqOpts, srcReq</span>)</span> {
       <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">Promise</span>(<span class="hljs-function">(<span class="hljs-params">resolve, reject</span>) =&gt;</span> {
         proxyReqOpts.headers.set(<span class="hljs-string">&quot;Content-Type&quot;</span>, <span class="hljs-string">&quot;text/html&quot;</span>);
 
@@ -318,7 +318,7 @@ app.use(
 				<pre><code class="language-ts">app.use(
   <span class="hljs-string">&quot;/proxy&quot;</span>,
   proxy(<span class="hljs-string">&quot;http://www.google.com&quot;</span>, {
-    secure: <span class="hljs-literal">true</span>,
+    <span class="hljs-attr">secure</span>: <span class="hljs-literal">true</span>,
   })
 );</code></pre>
 				<p>Note: if the proxy is passed a url without a protocol then HTTP will be used by default unless overridden by this option.</p>
@@ -329,7 +329,7 @@ app.use(
 				<pre><code class="language-ts">app.use(
   <span class="hljs-string">&quot;/proxy&quot;</span>,
   proxy(<span class="hljs-string">&quot;www.google.com&quot;</span>, {
-    preserveHostHeader: <span class="hljs-literal">true</span>,
+    <span class="hljs-attr">preserveHostHeader</span>: <span class="hljs-literal">true</span>,
   })
 );</code></pre>
 				<a href="#parsereqbody" id="parsereqbody" style="color: inherit; text-decoration: none;">
@@ -344,7 +344,7 @@ app.use(
 				<pre><code class="language-ts">app.use(
   <span class="hljs-string">&quot;/proxy&quot;</span>,
   proxy(<span class="hljs-string">&quot;www.google.com&quot;</span>, {
-    reqAsBuffer: <span class="hljs-literal">true</span>,
+    <span class="hljs-attr">reqAsBuffer</span>: <span class="hljs-literal">true</span>,
   })
 );</code></pre>
 				<a href="#reqbodyencoding" id="reqbodyencoding" style="color: inherit; text-decoration: none;">
@@ -355,7 +355,7 @@ app.use(
 				<pre><code class="language-ts">app.use(
   <span class="hljs-string">&quot;/post&quot;</span>,
   proxy(<span class="hljs-string">&quot;httpbin.org&quot;</span>, {
-    reqBodyEncoding: <span class="hljs-string">&quot;utf-8&quot;</span>,
+    <span class="hljs-attr">reqBodyEncoding</span>: <span class="hljs-string">&quot;utf-8&quot;</span>,
   })
 );</code></pre>
 				<a href="#timeout" id="timeout" style="color: inherit; text-decoration: none;">
@@ -367,7 +367,7 @@ app.use(
 				<pre><code class="language-ts">app.use(
   <span class="hljs-string">&quot;/&quot;</span>,
   proxy(<span class="hljs-string">&quot;httpbin.org&quot;</span>, {
-    timeout: <span class="hljs-number">2000</span>, <span class="hljs-comment">// in milliseconds, two seconds</span>
+    <span class="hljs-attr">timeout</span>: <span class="hljs-number">2000</span>, <span class="hljs-comment">// in milliseconds, two seconds</span>
   })
 );</code></pre>
 				<a href="#contributing" id="contributing" style="color: inherit; text-decoration: none;">
