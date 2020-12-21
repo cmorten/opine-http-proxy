@@ -124,7 +124,7 @@ export async function createRequestInit(
 const encoder = new TextEncoder();
 
 export function asBuffer(body: any) {
-  if (typeof body === "object") {
+  if (typeof body === "object" && !(body instanceof Uint8Array)) {
     return encoder.encode(JSON.stringify(body));
   } else if (typeof body === "string") {
     return encoder.encode(body);
@@ -134,7 +134,7 @@ export function asBuffer(body: any) {
 }
 
 export function asBufferOrString(body: any) {
-  if (typeof body === "object") {
+  if (typeof body === "object" && !(body instanceof Uint8Array)) {
     return JSON.stringify(body);
   }
 

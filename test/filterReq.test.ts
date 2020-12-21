@@ -1,6 +1,6 @@
 import { describe, it } from "./support/utils.ts";
 import { proxyTarget } from "./support/proxyTarget.ts";
-import { superdeno, opine } from "./deps.ts";
+import { opine, superdeno } from "./deps.ts";
 import { proxy } from "../mod.ts";
 
 const proxyRouteFn = [{

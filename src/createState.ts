@@ -1,4 +1,4 @@
-import { resolveOptions, ProxyOptions } from "./resolveOptions.ts";
+import { ProxyOptions, resolveOptions } from "./resolveOptions.ts";
 
 export interface ProxyUrlFunction<Req = any> {
   (req: Req): string | URL;
