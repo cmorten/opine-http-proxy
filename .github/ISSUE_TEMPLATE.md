@@ -8,8 +8,6 @@ Setup:
 - Opine HTTP Proxy Version: <replace_with_opine_http_proxy_version>
 - Opine Version: <replace_with_opine_version>
 
-> Please replace this line with a short description of the issue.
-
 ## Details
 
 > Please replace this quote block with the details of the feature / bug you wish to be addressed. If it is a bug please do your best to add steps to reproduce.

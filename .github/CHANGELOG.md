@@ -1,5 +1,9 @@
 # ChangeLog
 
+## [2.5.0] - 10-12-2021
+
+- feat: support Deno `1.7.2`
+
 ## [2.4.0] - 21-12-2020
 
 - feat: update to Deno `1.6.1`, std `0.81.0` and other dep upgrades.

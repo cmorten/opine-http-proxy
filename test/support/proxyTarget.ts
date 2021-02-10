@@ -1,11 +1,11 @@
-import { json, opine, Server, urlencoded } from "../deps.ts";
+import { json, opine, urlencoded } from "../deps.ts";
 
 export function proxyTarget(
   { port = 0, handlers }: {
     port?: number;
     handlers?: any;
   } = { port: 0 },
-): Server {
+) {
   const target = opine();
 
   target.use(urlencoded());
