@@ -22,7 +22,10 @@ export async function describe(name: string, fn: () => void | Promise<void>) {
 export async function it(
   name: string,
   fn: (done?: any) => void | Promise<void>,
-  opts?: Omit<Deno.TestDefinition, "name" | "fn">,
+  opts: Omit<Deno.TestDefinition, "name" | "fn"> = {
+    sanitizeResources: true,
+    sanitizeOps: true,
+  }
 ) {
   Deno.test({
     ...opts,
