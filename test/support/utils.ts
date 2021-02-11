@@ -25,7 +25,7 @@ export async function it(
   opts: Omit<Deno.TestDefinition, "name" | "fn"> = {
     sanitizeResources: true,
     sanitizeOps: true,
-  }
+  },
 ) {
   Deno.test({
     ...opts,
