@@ -1,12 +1,18 @@
 # ChangeLog
 
+## [2.6.0] - 26-04-2021
+
+- feat: update to Deno `1.9.2`, std `0.95.0`
+- feat: upgrade Opine dependency to `1.3.3`
+- fix: remove `body` from proxied `GET` and `HEAD` requests
+
 ## [2.5.0] - 10-12-2021
 
 - feat: support Deno `1.7.2`
 
 ## [2.4.0] - 21-12-2020
 
-- feat: update to Deno `1.6.1`, std `0.81.0` and other dep upgrades.
+- feat: update to Deno `1.6.1`, std `0.81.0` and other dep upgrades
 
 ## [2.3.1] - 19-09-2020
 
@@ -26,11 +32,13 @@
 
 - feat: upgrade Deno, std and other dep versions.
 - chore: add typedoc automation
-- docs: remove reference to importing commit or branch from readme as not supported by Deno registry v2.
+- docs: remove reference to importing commit or branch from readme as not
+  supported by Deno registry v2.
 
 ## [2.0.0] - 16-07-2020
 
-- feat: update to Deno `1.2.0` (breaking upgrade), std `0.61.0` and other dep upgrades.
+- feat: update to Deno `1.2.0` (breaking upgrade), std `0.61.0` and other dep
+  upgrades.
 - chore: update formatting.
 - chore: add <https://nest.land> registry support and automation.
 
@@ -41,4 +49,5 @@
 
 ## [1.0.0] - 10-06-2020
 
-- feat: initial loose port of [express-http-proxy](https://github.com/villadora/express-http-proxy).
+- feat: initial loose port of
+  [express-http-proxy](https://github.com/villadora/express-http-proxy).

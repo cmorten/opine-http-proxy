@@ -26,6 +26,10 @@ export function sendProxyReq(state: ProxyState) {
   const timeout = state.options.timeout;
   const isTimeout = typeof timeout === "number";
 
+  if (reqInit.method === "GET" || reqInit.method === "HEAD") {
+    reqInit.body = undefined;
+  }
+
   // TODO: use AbortController - blocked by https://github.com/denoland/deno/pull/6093.
 
   let timeoutId: number;
