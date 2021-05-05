@@ -11,7 +11,6 @@ Proxy middleware for Deno Opine HTTP servers.
 ![GitHub forks](https://img.shields.io/github/forks/asos-craigmorten/opine-http-proxy)
 ![opine-http-proxy License](https://img.shields.io/github/license/asos-craigmorten/opine-http-proxy)
 [![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://GitHub.com/asos-craigmorten/opine-http-proxy/graphs/commit-activity)
-[![HitCount](http://hits.dwyl.com/asos-craigmorten/opine-http-proxy.svg)](http://hits.dwyl.com/asos-craigmorten/opine-http-proxy)
 
 <p align="left">
    <a href="https://deno.land/x/opineHttpProxy"><img src="https://img.shields.io/endpoint?url=https%3A%2F%2Fdeno-visualizer.danopia.net%2Fshields%2Flatest-version%2Fx%2FopineHttpProxy%2Fmod.ts" alt="opine-http-proxy latest /x/ version" /></a>
