@@ -1,3 +1,4 @@
+// deno-lint-ignore-file no-explicit-any
 import { describe, it } from "./support/utils.ts";
 import { proxyTarget } from "./support/proxyTarget.ts";
 import { expect, opine, superdeno } from "./deps.ts";
@@ -28,7 +29,7 @@ const proxyRouteFn = [
   {
     method: "get",
     path: "/:errorCode",
-    fn: async (req: any, res: any) => {
+    fn: (req: any, res: any) => {
       setTimeout(() => {
         timeoutManager.resolver();
 
@@ -59,7 +60,7 @@ describe("error handling can be overridden by user", () => {
 
         superdeno(app)
           .get("/200")
-          .end(async (err, res) => {
+          .end(async (_err, res) => {
             await timeoutManager.close();
             targetServer.close();
             expect(res.status).toEqual(504);
@@ -82,7 +83,7 @@ describe("error handling can be overridden by user", () => {
 
         superdeno(app)
           .get("/504")
-          .end(async (err, res) => {
+          .end(async (_err, res) => {
             expect(res.status).toEqual(504);
             expect(res.text).toEqual("test-case-error");
             await timeoutManager.end();
@@ -101,7 +102,7 @@ describe("error handling can be overridden by user", () => {
 
         superdeno(app)
           .get("/500")
-          .end(async (err, res) => {
+          .end(async (_err, res) => {
             expect(res.status).toEqual(500);
             expect(res.text).toEqual("test-case-error");
             await timeoutManager.end();
@@ -128,14 +129,14 @@ describe("error handling can be overridden by user", () => {
         const app = opine();
         app.use(proxy(`localhost:${targetPort}`, {
           timeout: 1,
-          proxyErrorHandler: (err, res, next) => {
+          proxyErrorHandler: (_err, res, _next) => {
             res.setStatus(statusCode).send(message);
           },
         }));
 
         superdeno(app)
           .get("/200")
-          .end(async (err, res) => {
+          .end(async (_err, res) => {
             await timeoutManager.close();
             targetServer.close();
             expect(res.status).toEqual(statusCode);
@@ -155,14 +156,14 @@ describe("error handling can be overridden by user", () => {
 
         const app = opine();
         app.use(proxy(`localhost:${targetPort}`, {
-          proxyErrorHandler: (err, res, next) => {
+          proxyErrorHandler: (_err, res, _next) => {
             res.setStatus(statusCode).send(message);
           },
         }));
 
         superdeno(app)
           .get("/200")
-          .end((err, res) => {
+          .end((_err, res) => {
             expect(res.status).toEqual(statusCode);
             expect(res.text).toEqual(message);
             done();

@@ -1,3 +1,4 @@
+// deno-lint-ignore-file no-explicit-any
 import { json, opine, urlencoded } from "../deps.ts";
 
 export function proxyTarget(

@@ -1,3 +1,4 @@
+// deno-lint-ignore-file no-explicit-any
 import type { ProxyState } from "../createState.ts";
 
 const decoder = new TextDecoder();
@@ -41,7 +42,7 @@ export function sendProxyReq(state: ProxyState) {
     }),
     ...(isTimeout
       ? [
-        new Promise((resolve, reject) => {
+        new Promise((_resolve, reject) => {
           timeoutId = setTimeout(
             () => reject(new TimeoutError(TimeoutError.type(), url.toString())),
             timeout,

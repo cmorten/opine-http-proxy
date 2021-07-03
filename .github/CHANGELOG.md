@@ -1,5 +1,11 @@
 # ChangeLog
 
+## [2.7.0] - 03-07-2021
+
+- feat: update to Deno `1.11.5`, std `0.100.0`
+- feat: upgrade Opine dependency to `1.5.4`
+- ci: enable linting
+
 ## [2.6.0] - 26-04-2021
 
 - feat: update to Deno `1.9.2`, std `0.95.0`

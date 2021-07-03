@@ -14,14 +14,14 @@ Proxy middleware for Deno Opine HTTP servers.
 
 <p align="left">
    <a href="https://deno.land/x/opineHttpProxy"><img src="https://img.shields.io/endpoint?url=https%3A%2F%2Fdeno-visualizer.danopia.net%2Fshields%2Flatest-version%2Fx%2FopineHttpProxy%2Fmod.ts" alt="opine-http-proxy latest /x/ version" /></a>
-   <a href="https://github.com/denoland/deno/blob/main/Releases.md"><img src="https://img.shields.io/badge/deno-^1.9.2-brightgreen?logo=deno" alt="Minimum supported Deno version" /></a>
+   <a href="https://github.com/denoland/deno/blob/main/Releases.md"><img src="https://img.shields.io/badge/deno-^1.11.5-brightgreen?logo=deno" alt="Minimum supported Deno version" /></a>
    <a href="https://deno-visualizer.danopia.net/dependencies-of/https/deno.land/x/opineHttpProxy/mod.ts"><img src="https://img.shields.io/endpoint?url=https%3A%2F%2Fdeno-visualizer.danopia.net%2Fshields%2Fdep-count%2Fx%2FopineHttpProxy%2Fmod.ts" alt="opine-http-proxy dependency count" /></a>
    <a href="https://deno-visualizer.danopia.net/dependencies-of/https/deno.land/x/opineHttpProxy/mod.ts"><img src="https://img.shields.io/endpoint?url=https%3A%2F%2Fdeno-visualizer.danopia.net%2Fshields%2Fupdates%2Fx%2FopineHttpProxy%2Fmod.ts" alt="opine-http-proxy dependency outdatedness" /></a>
    <a href="https://deno-visualizer.danopia.net/dependencies-of/https/deno.land/x/opineHttpProxy/mod.ts"><img src="https://img.shields.io/endpoint?url=https%3A%2F%2Fdeno-visualizer.danopia.net%2Fshields%2Fcache-size%2Fx%2FopineHttpProxy%2Fmod.ts" alt="opine-http-proxy cached size" /></a>
 </p>
 
 ```ts
-import { proxy } from "https://deno.land/x/opineHttpProxy@2.6.0/mod.ts";
+import { proxy } from "https://deno.land/x/opineHttpProxy@2.7.0/mod.ts";
 import { opine } from "https://deno.land/x/opine@1.3.3/mod.ts";
 
 const app = opine();
@@ -41,7 +41,7 @@ Before importing, [download and install Deno](https://deno.land/#installation).
 You can then import opine-http-proxy straight into your project:
 
 ```ts
-import { proxy } from "https://deno.land/x/opineHttpProxy@2.6.0/mod.ts";
+import { proxy } from "https://deno.land/x/opineHttpProxy@2.7.0/mod.ts";
 ```
 
 ## Docs

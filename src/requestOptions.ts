@@ -1,3 +1,4 @@
+// deno-lint-ignore-file no-explicit-any
 import { read } from "../deps.ts";
 import type { ProxyState } from "./createState.ts";
 import type { ProxyOptions } from "./resolveOptions.ts";
@@ -56,7 +57,7 @@ function extendHeaders(
 
 const parseRawBody = (body: any) => body;
 
-async function getBody(req: any, res: any) {
+function getBody(req: any, res: any) {
   if (req.parsedBody) {
     return req.parsedBody;
   }

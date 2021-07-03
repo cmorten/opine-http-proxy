@@ -19,7 +19,7 @@ describe("proxies status code", () => {
 
       superdeno(proxyServer)
         .get(`/status/${status}`)
-        .end((err, res) => {
+        .end((_err, res) => {
           targetServer.close();
           expect(res.status).toEqual(status);
           done();

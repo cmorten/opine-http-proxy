@@ -28,7 +28,7 @@ describe("when server responds with an error", () => {
       const app = opine();
 
       const target = opine();
-      target.use(function (req, res) {
+      target.use(function (_req, res) {
         res.sendStatus(statusCode.code);
       });
       const targetServer = target.listen(0);
@@ -45,7 +45,7 @@ describe("when server responds with an error", () => {
 
       superdeno(app)
         .get("/proxy")
-        .end((err, res) => {
+        .end((_err, res) => {
           targetServer.close();
           expect(res.status).toEqual(statusCode.code);
           expect(res.text).toEqual(statusCode.text);

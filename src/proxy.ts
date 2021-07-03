@@ -1,3 +1,4 @@
+// deno-lint-ignore-file no-explicit-any
 import type { ProxyOptions } from "./resolveOptions.ts";
 import { createState, ProxyUrlFunction } from "./createState.ts";
 import { filterSrcReq } from "./steps/filterSrcReq.ts";
@@ -20,20 +21,20 @@ import { handleProxyErrors } from "./steps/handleProxyErrors.ts";
  * remaining path from a request that has not been matched by
  * Opine will be appended to the provided url when making the
  * proxy request.
- * 
+ *
  * Also accepts optional options configuration allowing the user
  * to modified all aspects of proxied request via option
  * properties or a series of hooks allowing decoration of the
  * outbound request and the inbound response objects.
- * 
+ *
  * Requests and responses can also be filtered via the `filterReq`
  * and `filterRes` function options, allowing requests to bypass
  * the proxy. Internally this is achieved by calling the Opine
  * `next()` method to delegate to the next Opine middleware.
- * 
+ *
  * @param {string|URL|ProxyUrlFunction} url
- * @param {ProxyOptions} options 
- * 
+ * @param {ProxyOptions} options
+ *
  * @returns {Function} Opine proxy middleware
  * @public
  */

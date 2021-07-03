@@ -1,4 +1,5 @@
-function connectionResetHandler(err: any, res: any) {
+// deno-lint-ignore-file no-explicit-any
+function connectionResetHandler(_err: any, res: any) {
   res.set("X-Timeout-Reason", "opine-http-proxy reset the request.");
   res.sendStatus(504);
 }

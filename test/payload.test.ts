@@ -44,7 +44,7 @@ describe("when making a proxy request with a payload", () => {
       target.use(json());
       target.use(urlencoded());
 
-      target.post("/", async (req, res) => {
+      target.post("/", (req, res) => {
         expect(req.body).toEqual({});
         expect(req.headers.get("content-type")).toEqual(test.encoding);
         res.json({ message: "Hello Deno!" });

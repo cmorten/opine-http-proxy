@@ -1,10 +1,11 @@
+// deno-lint-ignore-file no-explicit-any
 import { isUnset } from "./isUnset.ts";
 
 /**
  * Interface for the proxy options which allow the user
  * to filter, customize and decorate proxied requests and
  * responses.
- * 
+ *
  * @public
  */
 export interface ProxyOptions
@@ -12,10 +13,10 @@ export interface ProxyOptions
   /**
    * The filter request option can be used to limit what requests are
    * proxied.
-   * 
-   * Return false to continue to execute the proxy; return true to skip the 
+   *
+   * Return false to continue to execute the proxy; return true to skip the
    * proxy for this request.
-   * 
+   *
    * @public
    */
   filterReq?: (
@@ -25,7 +26,7 @@ export interface ProxyOptions
 
   /**
    * Provide a custom error handling for failed proxied requests.
-   * 
+   *
    * @public
    */
   proxyErrorHandler?: (
@@ -36,7 +37,7 @@ export interface ProxyOptions
 
   /**
    * Decorate the outbound proxied request url.
-   * 
+   *
    * @public
    */
   proxyReqUrlDecorator?: (url: URL, req?: any) => URL | Promise<URL>;
@@ -45,7 +46,7 @@ export interface ProxyOptions
    * Decorate the outbound proxied request initialization options.
    * This configuration will be used within the `fetch` method internally
    * to make the request to the provided url.
-   * 
+   *
    * @public
    */
   proxyReqInitDecorator?: (
@@ -55,7 +56,7 @@ export interface ProxyOptions
 
   /**
    * Decorate the inbound response headers from the proxied request.
-   * 
+   *
    * @public
    */
   srcResHeaderDecorator?: (
@@ -68,7 +69,7 @@ export interface ProxyOptions
 
   /**
    * Decorate the inbound response object from the proxied request.
-   * 
+   *
    * @public
    */
   srcResDecorator?: (
@@ -81,10 +82,10 @@ export interface ProxyOptions
   /**
    * The filter response option can be used to limit what responses are
    * used from the proxy.
-   * 
-   * Return false to continue to execute the proxy; return true to skip the 
+   *
+   * Return false to continue to execute the proxy; return true to skip the
    * proxy for this request.
-   * 
+   *
    * @public
    */
   filterRes?: (proxyRes: Response, proxyResData: any) => boolean;
@@ -92,7 +93,7 @@ export interface ProxyOptions
   /**
    * Configure whether the "Host" header should be preserved on proxied
    * requests.
-   * 
+   *
    * @public
    */
   preserveHostHeader?: boolean;
@@ -100,16 +101,16 @@ export interface ProxyOptions
   /**
    * Configure whether the request body should be parsed and used on
    * proxied requests.
-   * 
+   *
    * True by default.
-   * 
+   *
    * @public
    */
   parseReqBody?: boolean;
 
   /**
    * The request body encoding to use. Only "utf-8" currently supported.
-   * 
+   *
    * @public
    */
   reqBodyEncoding?: "utf-8" | null;
@@ -117,7 +118,7 @@ export interface ProxyOptions
   /**
    * Configure whether the request body should be sent as a UInt8Array
    * buffer.
-   * 
+   *
    * @public
    */
   reqAsBuffer?: boolean;
@@ -125,12 +126,12 @@ export interface ProxyOptions
   /**
    * Configure whether the proxy URL should be memoized for subsequent
    * requests.
-   * 
+   *
    * If you are using the function form of the URL and require it to
    * be executed on every request then this should be set to false.
-   * 
+   *
    * True by default.
-   * 
+   *
    * @public
    */
   memoizeUrl?: boolean;
@@ -138,7 +139,7 @@ export interface ProxyOptions
   /**
    * The memoized url set on first request and used internally if
    * `memoizeUrl` is set to true.
-   * 
+   *
    * @private
    */
   memoizedUrl?: URL;
@@ -147,7 +148,7 @@ export interface ProxyOptions
    * Configure whether the outbound proxied request should be over
    * HTTPS. This will always override the protocol produced by the provided
    * proxy URL if set to `true`.
-   * 
+   *
    * @public
    */
   secure?: boolean;
@@ -155,7 +156,7 @@ export interface ProxyOptions
   /**
    * Configure a timeout in ms for the outbound proxied request. If not
    * provided the request will never time out.
-   * 
+   *
    * @public
    */
   timeout?: number;
@@ -163,7 +164,7 @@ export interface ProxyOptions
   /**
    * Configure the HTTP method (verb) used for the outbound proxied
    * request. If not provided the current request method is used.
-   * 
+   *
    * @public
    */
   method?: "string";

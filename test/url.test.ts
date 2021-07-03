@@ -1,3 +1,4 @@
+// deno-lint-ignore-file no-explicit-any
 import { describe, it } from "./support/utils.ts";
 import { proxyTarget } from "./support/proxyTarget.ts";
 import { expect, opine, superdeno } from "./deps.ts";
@@ -21,7 +22,7 @@ describe("url: string", () => {
       const proxyRouteFn = {
         method: "get",
         path: modifiedPath,
-        fn: (req: any, res: any) => {
+        fn: (_req: any, res: any) => {
           res.json({ path, modifiedPath });
         },
       };
@@ -55,7 +56,7 @@ describe("url: URL", () => {
       const proxyRouteFn = {
         method: "get",
         path: modifiedPath,
-        fn: (req: any, res: any) => {
+        fn: (_req: any, res: any) => {
           res.json({ path, modifiedPath });
         },
       };
@@ -87,8 +88,8 @@ describe("url: function", () => {
     const firstPort = 10031;
     const secondPort = 10032;
 
-    firstProxyApp.use("/", (req, res) => res.sendStatus(204));
-    secondProxyApp.use("/", (req, res) => res.sendStatus(200));
+    firstProxyApp.use("/", (_req, res) => res.sendStatus(204));
+    secondProxyApp.use("/", (_req, res) => res.sendStatus(200));
 
     const firstServer = firstProxyApp.listen(firstPort);
     const secondServer = secondProxyApp.listen(secondPort);

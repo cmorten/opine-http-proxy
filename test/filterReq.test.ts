@@ -1,3 +1,4 @@
+// deno-lint-ignore-file no-explicit-any
 import { describe, it } from "./support/utils.ts";
 import { proxyTarget } from "./support/proxyTarget.ts";
 import { opine, superdeno } from "./deps.ts";
@@ -6,12 +7,12 @@ import { proxy } from "../mod.ts";
 const proxyRouteFn = [{
   method: "get",
   path: "/",
-  fn: (req: any, res: any) => {
+  fn: (_req: any, res: any) => {
     return res.setStatus(200).send("Proxy Server");
   },
 }];
 
-function nextMethod(req: any, res: any, next: any) {
+function nextMethod(_req: any, res: any, _next: any) {
   res.setStatus(201).send("Client Application");
 }
 

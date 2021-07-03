@@ -1,3 +1,4 @@
+// deno-lint-ignore-file no-explicit-any
 import { describe, it } from "./support/utils.ts";
 import { expect, opine, superdeno } from "./deps.ts";
 import { proxy } from "../mod.ts";

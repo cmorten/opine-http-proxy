@@ -1,3 +1,4 @@
+// deno-lint-ignore-file no-explicit-any
 import type { ProxyState } from "../createState.ts";
 import { asBuffer, asBufferOrString } from "../requestOptions.ts";
 

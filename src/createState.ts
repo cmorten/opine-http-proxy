@@ -1,3 +1,4 @@
+// deno-lint-ignore-file no-explicit-any
 import { ProxyOptions, resolveOptions } from "./resolveOptions.ts";
 
 export interface ProxyUrlFunction<Req = any> {
