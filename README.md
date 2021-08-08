@@ -22,7 +22,7 @@ Proxy middleware for Deno Opine HTTP servers.
 
 ```ts
 import { proxy } from "https://deno.land/x/opineHttpProxy@2.9.0/mod.ts";
-import { opine } from "https://deno.land/x/opine@1.6.0/mod.ts";
+import { opine } from "https://deno.land/x/opine@1.7.1/mod.ts";
 
 const app = opine();
 
