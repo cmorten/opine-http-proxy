@@ -1,5 +1,10 @@
 # ChangeLog
 
+## [2.9.0] - 08-08-2021
+
+- feat: update to Deno `1.12.2`, std `0.103.0`
+- feat: upgrade Opine dependency to `1.7.1`
+
 ## [2.8.0] - 13-07-2021
 
 - feat: update to Deno `1.12.0`, std `0.101.0`

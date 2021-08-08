@@ -1,14 +1,13 @@
 {
     "name": "opine-http-proxy",
     "description": "Proxy middleware for Deno Opine HTTP servers.",
-    "version": "2.8.0",
+    "version": "2.9.0",
     "repository": "https://github.com/asos-craigmorten/opine-http-proxy",
     "stable": true,
     "files": [
         "./mod.ts",
         "./deps.ts",
         "./version.ts",
-        "./lock.json",
         "./src/**/*",
         "./README.md",
         "./LICENSE.md",
