@@ -22,9 +22,7 @@ const STATUS_CODES = [
 
 describe("when server responds with an error", () => {
   STATUS_CODES.forEach((statusCode) => {
-    it(`opine-http-proxy responds with ${statusCode.text} when proxy server responds ${statusCode.code}`, (
-      done,
-    ) => {
+    it(`opine-http-proxy responds with ${statusCode.text} when proxy server responds ${statusCode.code}`, (done) => {
       const app = opine();
 
       const target = opine();

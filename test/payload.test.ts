@@ -9,9 +9,7 @@ describe("when making a proxy request with a payload", () => {
   ];
 
   testCases.forEach((test) => {
-    it(`should deliver non-empty querystring params when ${test.name} (GET)`, (
-      done,
-    ) => {
+    it(`should deliver non-empty querystring params when ${test.name} (GET)`, (done) => {
       const target = opine();
       target.use(json());
       target.use(urlencoded());
@@ -95,9 +93,7 @@ describe("when making a proxy request with a payload", () => {
         });
     });
 
-    it(`should not deliver a non-empty body when "parseReqBody" is for when ${test.name} (POST)`, (
-      done,
-    ) => {
+    it(`should not deliver a non-empty body when "parseReqBody" is for when ${test.name} (POST)`, (done) => {
       const target = opine();
       target.use(json());
       target.use(urlencoded());

@@ -4,11 +4,11 @@
 export const TEST_TIMEOUT = 3000;
 
 /**
-  * A no-op _describe_ method.
-  *
-  * @param name
-  * @param fn
-  */
+ * A no-op _describe_ method.
+ *
+ * @param name
+ * @param fn
+ */
 export function describe(_name: string, fn: () => void | Promise<void>) {
   return fn();
 }
@@ -16,11 +16,11 @@ export function describe(_name: string, fn: () => void | Promise<void>) {
 export type Done = (err?: Error) => void;
 
 /**
-  * An _it_ wrapper around `Deno.test`.
-  *
-  * @param name
-  * @param fn
-  */
+ * An _it_ wrapper around `Deno.test`.
+ *
+ * @param name
+ * @param fn
+ */
 export function it(
   name: string,
   fn: (done: Done) => void | Promise<void>,

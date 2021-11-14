@@ -14,9 +14,7 @@ const proxyKeyPath = "/somePath";
 
 describe("url: string", () => {
   proxyRoutes.forEach((path) => {
-    it(`should use the unmatched path component of "${path}" from the inbound request to proxy to the remote server (url: string)`, (
-      done,
-    ) => {
+    it(`should use the unmatched path component of "${path}" from the inbound request to proxy to the remote server (url: string)`, (done) => {
       const modifiedPath = path.replace(new RegExp(proxyKeyPath), "");
 
       const proxyRouteFn = {
@@ -48,9 +46,7 @@ describe("url: string", () => {
 
 describe("url: URL", () => {
   proxyRoutes.forEach((path) => {
-    it(`should use the unmatched path component of "${path}" from the inbound request to proxy to the remote server (url: URL)`, (
-      done,
-    ) => {
+    it(`should use the unmatched path component of "${path}" from the inbound request to proxy to the remote server (url: URL)`, (done) => {
       const modifiedPath = path.replace(new RegExp(proxyKeyPath), "");
 
       const proxyRouteFn = {

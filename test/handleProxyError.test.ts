@@ -119,9 +119,7 @@ describe("error handling can be overridden by user", () => {
       "Whoever you are, and wherever you may be, friendship is always granted over a good cup of tea.";
 
     describe("when a timeout is set that fires", () => {
-      it("should use the provided handler function passing on the timeout error", (
-        done,
-      ) => {
+      it("should use the provided handler function passing on the timeout error", (done) => {
         timeoutManager.reset();
         const targetServer = proxyTarget({ handlers: proxyRouteFn });
         const targetPort = (targetServer.listener.addr as Deno.NetAddr).port;
@@ -147,9 +145,7 @@ describe("error handling can be overridden by user", () => {
     });
 
     describe("when the remote server is down", () => {
-      it("should use the provided handler function passing on the connection refused error", (
-        done,
-      ) => {
+      it("should use the provided handler function passing on the connection refused error", (done) => {
         const targetServer = proxyTarget({ handlers: proxyRouteFn });
         const targetPort = (targetServer.listener.addr as Deno.NetAddr).port;
         targetServer.close();
