@@ -1,5 +1,9 @@
 # ChangeLog
 
+## [2.9.1] - 21-11-2021
+
+- feat: update to Deno `1.16.2`, std `0.115.1`
+
 ## [2.9.1] - 14-11-2021
 
 - feat: update to Deno `1.16.1`, std `0.114.0`
