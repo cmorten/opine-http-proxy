@@ -1,5 +1,23 @@
 # ChangeLog
 
+## [3.0.0] - 21-11-2021
+
+- [#10] Store and pass the proxy response data as an `Uint8Array` instead of
+  always decoding to a string (#11)
+
+This impacts:
+
+- [`srcResDecorator`](https://github.com/asos-craigmorten/opine-http-proxy/tree/main#srcresdecoratorreq-res-proxyres-proxyresdata-supports-promise)
+- [`filterRes`](https://github.com/asos-craigmorten/opine-http-proxy/tree/main#filterresproxyres-proxyresdata-supports-promise-form)
+
+Where the `proxyResData` argument will be of type `Uint8Array|null` and not
+`string|null`. If you require the value to be a string, you will need to decode
+it yourself using, e.g.
+
+```ts
+new TextDecoder().decode(proxyResData);
+```
+
 ## [2.9.2] - 21-11-2021
 
 - feat: update to Deno `1.16.2`, std `0.115.1`

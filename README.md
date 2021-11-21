@@ -21,7 +21,7 @@ Proxy middleware for Deno Opine HTTP servers.
 </p>
 
 ```ts
-import { proxy } from "https://deno.land/x/opineHttpProxy@2.9.2/mod.ts";
+import { proxy } from "https://deno.land/x/opineHttpProxy@3.0.0/mod.ts";
 import { opine } from "https://deno.land/x/opine@1.9.1/mod.ts";
 
 const app = opine();
@@ -41,7 +41,7 @@ Before importing, [download and install Deno](https://deno.land/#installation).
 You can then import opine-http-proxy straight into your project:
 
 ```ts
-import { proxy } from "https://deno.land/x/opineHttpProxy@2.9.2/mod.ts";
+import { proxy } from "https://deno.land/x/opineHttpProxy@3.0.0/mod.ts";
 ```
 
 ## Docs
@@ -120,9 +120,9 @@ Decorate the inbound response object from the proxied request.
 ```ts
 app.use(
   "/proxy",
-  proxy("www.google.com", {
+  proxy("www.example.com", {
     srcResDecorator: (req, res, proxyRes, proxyResData) => {
-      data = JSON.parse(proxyResData.toString("utf8"));
+      data = JSON.parse(new TextDecoder().decode(proxyResData));
       data.newProperty = "exciting data";
 
       return JSON.stringify(data);
