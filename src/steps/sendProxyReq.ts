@@ -1,8 +1,6 @@
 // deno-lint-ignore-file no-explicit-any
 import type { ProxyState } from "../createState.ts";
 
-const decoder = new TextDecoder();
-
 export class TimeoutError extends Error {
   code = "ECONTIMEDOUT";
   name = "TimeoutError";
@@ -55,7 +53,7 @@ export function sendProxyReq(state: ProxyState) {
     const bufferedResponse = await res.arrayBuffer();
     state.proxy.resData = bufferedResponse === null
       ? null
-      : decoder.decode(bufferedResponse);
+      : new Uint8Array(bufferedResponse);
 
     return state;
   });

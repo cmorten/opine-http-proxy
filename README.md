@@ -120,9 +120,9 @@ Decorate the inbound response object from the proxied request.
 ```ts
 app.use(
   "/proxy",
-  proxy("www.google.com", {
+  proxy("www.example.com", {
     srcResDecorator: (req, res, proxyRes, proxyResData) => {
-      data = JSON.parse(proxyResData.toString("utf8"));
+      data = JSON.parse(new TextDecoder().decode(proxyResData));
       data.newProperty = "exciting data";
 
       return JSON.stringify(data);
