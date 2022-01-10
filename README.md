@@ -21,7 +21,7 @@ Proxy middleware for Deno Opine HTTP servers.
 </p>
 
 ```ts
-import { proxy } from "https://deno.land/x/opineHttpProxy@4.0.0/mod.ts";
+import { proxy } from "https://deno.land/x/opineHttpProxy@3.0.1/mod.ts";
 import { opine } from "https://deno.land/x/opine@2.0.2/mod.ts";
 
 const app = opine();
@@ -41,7 +41,7 @@ Before importing, [download and install Deno](https://deno.land/#installation).
 You can then import opine-http-proxy straight into your project:
 
 ```ts
-import { proxy } from "https://deno.land/x/opineHttpProxy@4.0.0/mod.ts";
+import { proxy } from "https://deno.land/x/opineHttpProxy@3.0.1/mod.ts";
 ```
 
 ## Docs

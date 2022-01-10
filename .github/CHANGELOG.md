@@ -1,5 +1,13 @@
 # ChangeLog
 
+## [3.0.1] - 10-01-2022
+
+- [#12] `method` should have type `string` not `"string"`
+- feat: update to Deno `1.17.2`, std `0.120.0`
+- feat: upgrade Opine to `2.0.2` in tests
+- feat: other minor dependency upgrades
+- chore: changes to reflect GitHub repo transfer
+
 ## [3.0.0] - 21-11-2021
 
 - [#10] Store and pass the proxy response data as an `Uint8Array` instead of

@@ -1,7 +1,7 @@
 {
     "name": "opine-http-proxy",
     "description": "Proxy middleware for Deno Opine HTTP servers.",
-    "version": "4.0.0",
+    "version": "3.0.1",
     "repository": "https://github.com/cmorten/opine-http-proxy",
     "stable": true,
     "files": [
