@@ -7,8 +7,8 @@
 
 This impacts:
 
-- [`srcResDecorator`](https://github.com/asos-craigmorten/opine-http-proxy/tree/main#srcresdecoratorreq-res-proxyres-proxyresdata-supports-promise)
-- [`filterRes`](https://github.com/asos-craigmorten/opine-http-proxy/tree/main#filterresproxyres-proxyresdata-supports-promise-form)
+- [`srcResDecorator`](https://github.com/cmorten/opine-http-proxy/tree/main#srcresdecoratorreq-res-proxyres-proxyresdata-supports-promise)
+- [`filterRes`](https://github.com/cmorten/opine-http-proxy/tree/main#filterresproxyres-proxyresdata-supports-promise-form)
 
 Where the `proxyResData` argument will be of type `Uint8Array|null` and not
 `string|null`. If you require the value to be a string, you will need to decode

@@ -2,31 +2,31 @@
 
 Proxy middleware for Deno Opine HTTP servers.
 
-[![GitHub tag](https://img.shields.io/github/tag/asos-craigmorten/opine-http-proxy)](https://github.com/asos-craigmorten/opine-http-proxy/tags/)
-![Test](https://github.com/asos-craigmorten/opine-http-proxy/workflows/Test/badge.svg)
+[![GitHub tag](https://img.shields.io/github/tag/cmorten/opine-http-proxy)](https://github.com/cmorten/opine-http-proxy/tags/)
+![Test](https://github.com/cmorten/opine-http-proxy/workflows/Test/badge.svg)
 [![deno doc](https://doc.deno.land/badge.svg)](https://doc.deno.land/https/deno.land/x/opineHttpProxy/mod.ts)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](http://makeapullrequest.com)
-[![GitHub issues](https://img.shields.io/github/issues/asos-craigmorten/opine-http-proxy)](https://img.shields.io/github/issues/asos-craigmorten/opine-http-proxy)
-![GitHub stars](https://img.shields.io/github/stars/asos-craigmorten/opine-http-proxy)
-![GitHub forks](https://img.shields.io/github/forks/asos-craigmorten/opine-http-proxy)
-![opine-http-proxy License](https://img.shields.io/github/license/asos-craigmorten/opine-http-proxy)
-[![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://GitHub.com/asos-craigmorten/opine-http-proxy/graphs/commit-activity)
+[![GitHub issues](https://img.shields.io/github/issues/cmorten/opine-http-proxy)](https://img.shields.io/github/issues/cmorten/opine-http-proxy)
+![GitHub stars](https://img.shields.io/github/stars/cmorten/opine-http-proxy)
+![GitHub forks](https://img.shields.io/github/forks/cmorten/opine-http-proxy)
+![opine-http-proxy License](https://img.shields.io/github/license/cmorten/opine-http-proxy)
+[![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://GitHub.com/cmorten/opine-http-proxy/graphs/commit-activity)
 
 <p align="left">
    <a href="https://deno.land/x/opineHttpProxy"><img src="https://img.shields.io/endpoint?url=https%3A%2F%2Fdeno-visualizer.danopia.net%2Fshields%2Flatest-version%2Fx%2FopineHttpProxy%2Fmod.ts" alt="opine-http-proxy latest /x/ version" /></a>
-   <a href="https://github.com/denoland/deno/blob/main/Releases.md"><img src="https://img.shields.io/badge/deno-^1.16.2-brightgreen?logo=deno" alt="Minimum supported Deno version" /></a>
+   <a href="https://github.com/denoland/deno/blob/main/Releases.md"><img src="https://img.shields.io/badge/deno-^1.17.2-brightgreen?logo=deno" alt="Minimum supported Deno version" /></a>
    <a href="https://deno-visualizer.danopia.net/dependencies-of/https/deno.land/x/opineHttpProxy/mod.ts"><img src="https://img.shields.io/endpoint?url=https%3A%2F%2Fdeno-visualizer.danopia.net%2Fshields%2Fdep-count%2Fx%2FopineHttpProxy%2Fmod.ts" alt="opine-http-proxy dependency count" /></a>
    <a href="https://deno-visualizer.danopia.net/dependencies-of/https/deno.land/x/opineHttpProxy/mod.ts"><img src="https://img.shields.io/endpoint?url=https%3A%2F%2Fdeno-visualizer.danopia.net%2Fshields%2Fupdates%2Fx%2FopineHttpProxy%2Fmod.ts" alt="opine-http-proxy dependency outdatedness" /></a>
    <a href="https://deno-visualizer.danopia.net/dependencies-of/https/deno.land/x/opineHttpProxy/mod.ts"><img src="https://img.shields.io/endpoint?url=https%3A%2F%2Fdeno-visualizer.danopia.net%2Fshields%2Fcache-size%2Fx%2FopineHttpProxy%2Fmod.ts" alt="opine-http-proxy cached size" /></a>
 </p>
 
 ```ts
-import { proxy } from "https://deno.land/x/opineHttpProxy@3.0.0/mod.ts";
-import { opine } from "https://deno.land/x/opine@1.9.1/mod.ts";
+import { proxy } from "https://deno.land/x/opineHttpProxy@4.0.0/mod.ts";
+import { opine } from "https://deno.land/x/opine@2.0.2/mod.ts";
 
 const app = opine();
 
-app.use(proxy("https://github.com/asos-craigmorten/opine-http-proxy"));
+app.use(proxy("https://github.com/cmorten/opine-http-proxy"));
 
 app.listen(3000);
 ```
@@ -41,15 +41,15 @@ Before importing, [download and install Deno](https://deno.land/#installation).
 You can then import opine-http-proxy straight into your project:
 
 ```ts
-import { proxy } from "https://deno.land/x/opineHttpProxy@3.0.0/mod.ts";
+import { proxy } from "https://deno.land/x/opineHttpProxy@4.0.0/mod.ts";
 ```
 
 ## Docs
 
-- [opine-http-proxy Type Docs](https://asos-craigmorten.github.io/opine-http-proxy/)
+- [opine-http-proxy Type Docs](https://cmorten.github.io/opine-http-proxy/)
 - [opine-http-proxy Deno Docs](https://doc.deno.land/https/deno.land/x/opineHttpProxy/mod.ts)
-- [License](https://github.com/asos-craigmorten/opine-http-proxy/blob/main/LICENSE.md)
-- [Changelog](https://github.com/asos-craigmorten/opine-http-proxy/blob/main/.github/CHANGELOG.md)
+- [License](https://github.com/cmorten/opine-http-proxy/blob/main/LICENSE.md)
+- [Changelog](https://github.com/cmorten/opine-http-proxy/blob/main/.github/CHANGELOG.md)
 
 ## Usage
 
@@ -432,7 +432,7 @@ app.use(
 
 ## Contributing
 
-[Contributing guide](https://github.com/asos-craigmorten/opine-http-proxy/blob/main/.github/CONTRIBUTING.md)
+[Contributing guide](https://github.com/cmorten/opine-http-proxy/blob/main/.github/CONTRIBUTING.md)
 
 ---
 

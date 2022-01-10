@@ -1,9 +1,9 @@
 /**
  * Version of opine-http-proxy.
  */
-export const VERSION = "3.0.0";
+export const VERSION = "4.0.0";
 
 /**
  * Supported versions of Deno.
  */
-export const DENO_SUPPORTED_VERSIONS = ["1.16.2"];
+export const DENO_SUPPORTED_VERSIONS = ["1.17.2"];
