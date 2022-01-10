@@ -21,7 +21,7 @@ describe("when making a proxy request with a payload", () => {
       });
 
       const proxyServer = target.listen();
-      const proxyPort = (proxyServer.listener.addr as Deno.NetAddr).port;
+      const proxyPort = (proxyServer.addrs[0] as Deno.NetAddr).port;
 
       const app = opine();
       app.use("/proxy", proxy(`http://127.0.0.1:${proxyPort}`));
@@ -49,7 +49,7 @@ describe("when making a proxy request with a payload", () => {
       });
 
       const proxyServer = target.listen();
-      const proxyPort = (proxyServer.listener.addr as Deno.NetAddr).port;
+      const proxyPort = (proxyServer.addrs[0] as Deno.NetAddr).port;
 
       const app = opine();
       app.use("/proxy", proxy(`http://127.0.0.1:${proxyPort}`));
@@ -77,7 +77,7 @@ describe("when making a proxy request with a payload", () => {
       });
 
       const proxyServer = target.listen();
-      const proxyPort = (proxyServer.listener.addr as Deno.NetAddr).port;
+      const proxyPort = (proxyServer.addrs[0] as Deno.NetAddr).port;
 
       const app = opine();
       app.use("/proxy", proxy(`http://127.0.0.1:${proxyPort}`));
@@ -105,7 +105,7 @@ describe("when making a proxy request with a payload", () => {
       });
 
       const proxyServer = target.listen();
-      const proxyPort = (proxyServer.listener.addr as Deno.NetAddr).port;
+      const proxyPort = (proxyServer.addrs[0] as Deno.NetAddr).port;
 
       const app = opine();
       app.use(

@@ -17,7 +17,7 @@ const proxyRouteFn = [
 describe("url parsing", () => {
   it("can parse a local url with a port", (done) => {
     const target = proxyTarget({ handlers: proxyRouteFn });
-    const targetPort = (target.listener.addr as Deno.NetAddr).port;
+    const targetPort = (target.addrs[0] as Deno.NetAddr).port;
 
     const app = opine();
     app.use(proxy(`http://localhost:${targetPort}`));

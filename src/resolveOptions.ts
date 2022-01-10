@@ -167,7 +167,7 @@ export interface ProxyOptions
    *
    * @public
    */
-  method?: "string";
+  method?: string;
 }
 
 /**

@@ -20,7 +20,7 @@ describe("filterReq", () => {
   it("should continue route processing when the filter function returns false (i.e. don't filter)", (done) => {
     const app = opine();
     const proxyServer = proxyTarget({ handlers: proxyRouteFn });
-    const proxyPort = (proxyServer.listener.addr as Deno.NetAddr).port;
+    const proxyPort = (proxyServer.addrs[0] as Deno.NetAddr).port;
 
     app.use(proxy(`localhost:${proxyPort}`, {
       filterReq: () => false,
@@ -40,7 +40,7 @@ describe("filterReq", () => {
   it("should stop route processing when the filter function returns true (i.e. filter)", (done) => {
     const app = opine();
     const proxyServer = proxyTarget({ handlers: proxyRouteFn });
-    const proxyPort = (proxyServer.listener.addr as Deno.NetAddr).port;
+    const proxyPort = (proxyServer.addrs[0] as Deno.NetAddr).port;
 
     app.use(proxy(`localhost:${proxyPort}`, {
       filterReq: () => true,
@@ -60,7 +60,7 @@ describe("filterReq", () => {
   it("should continue route processing when the filter function returns Promise<false> (i.e. don't filter)", (done) => {
     const app = opine();
     const proxyServer = proxyTarget({ handlers: proxyRouteFn });
-    const proxyPort = (proxyServer.listener.addr as Deno.NetAddr).port;
+    const proxyPort = (proxyServer.addrs[0] as Deno.NetAddr).port;
 
     app.use(proxy(`localhost:${proxyPort}`, {
       filterReq: () => Promise.resolve(false),
@@ -80,7 +80,7 @@ describe("filterReq", () => {
   it("should stop route processing when the filter function returns Promise<true> (i.e. filter)", (done) => {
     const app = opine();
     const proxyServer = proxyTarget({ handlers: proxyRouteFn });
-    const proxyPort = (proxyServer.listener.addr as Deno.NetAddr).port;
+    const proxyPort = (proxyServer.addrs[0] as Deno.NetAddr).port;
 
     app.use(proxy(`localhost:${proxyPort}`, {
       filterReq: () => Promise.resolve(true),
