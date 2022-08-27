@@ -1,5 +1,10 @@
 # ChangeLog
 
+## [3.0.2] - 27-08-2022
+
+- feat: update to Deno `1.25.0`, std `0.153.0`
+- feat: upgrade Opine to `2.3.0`
+
 ## [3.0.1] - 10-01-2022
 
 - [#12] `method` should have type `string` not `"string"`
