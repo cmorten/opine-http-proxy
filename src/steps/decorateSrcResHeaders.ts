@@ -1,9 +1,11 @@
 import type { ProxyState } from "../createState.ts";
 
-const defaultDecorator = (headers: Headers): Headers => headers;
-
 export function decorateSrcResHeaders(state: ProxyState) {
-  const resolverFn = state.options.srcResHeaderDecorator || defaultDecorator;
+  const resolverFn = state.options.srcResHeaderDecorator;
+
+  if (!resolverFn) {
+    return Promise.resolve(state);
+  }
 
   const headers = state.src.res.headers || new Headers();
 

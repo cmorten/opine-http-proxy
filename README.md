@@ -21,7 +21,7 @@ Proxy middleware for Deno Opine HTTP servers.
 </p>
 
 ```ts
-import { proxy } from "https://deno.land/x/opineHttpProxy@3.1.0/mod.ts";
+import { proxy } from "https://deno.land/x/opineHttpProxy@3.2.0/mod.ts";
 import { opine } from "https://deno.land/x/opine@2.3.1/mod.ts";
 
 const app = opine();
@@ -41,7 +41,7 @@ Before importing, [download and install Deno](https://deno.land/#installation).
 You can then import opine-http-proxy straight into your project:
 
 ```ts
-import { proxy } from "https://deno.land/x/opineHttpProxy@3.1.0/mod.ts";
+import { proxy } from "https://deno.land/x/opineHttpProxy@3.2.0/mod.ts";
 ```
 
 ## Docs
@@ -70,6 +70,15 @@ app.get(
   proxy(() => new URL("http://google.com")),
 );
 ```
+
+### Streaming
+
+Proxy requests and user responses are piped/streamed/chunked by default.
+
+If you define a response modifier (`srcResDecorator`, `srcResHeaderDecorator`),
+or need to inspect the response before continuing (`filterRes`), streaming is
+disabled, and the request and response are buffered. This can cause performance
+issues with large payloads.
 
 ### Proxy Options
 
@@ -294,7 +303,7 @@ You can also use Promises:
 app.use(
   "/proxy",
   proxy("localhost:3000", {
-    proxyReqOptDecorator(url, req) {
+    proxyReqUrlDecorator(url, req) {
       return new Promise((resolve, reject) => {
         if (url.pathname === "/login") {
           url.port = 8080;
@@ -336,7 +345,7 @@ You can also use Promises:
 app.use(
   "/proxy",
   proxy("www.google.com", {
-    proxyReqOptDecorator(proxyReqOpts, srcReq) {
+    proxyReqInitDecorator(proxyReqOpts, srcReq) {
       return new Promise((resolve, reject) => {
         proxyReqOpts.headers.set("Content-Type", "text/html");
 

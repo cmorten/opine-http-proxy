@@ -50,6 +50,11 @@ export function sendProxyReq(state: ProxyState) {
       : []),
   ]).then(async ([res]: Response[]) => {
     state.proxy.res = res;
+
+    if (state.options.stream) {
+      return state;
+    }
+
     const bufferedResponse = await res.arrayBuffer();
     state.proxy.resData = bufferedResponse === null
       ? null

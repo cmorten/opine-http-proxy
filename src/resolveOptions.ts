@@ -168,6 +168,11 @@ export interface ProxyOptions
    * @public
    */
   method?: string;
+
+  /**
+   * @private
+   */
+  stream?: boolean;
 }
 
 /**
@@ -181,7 +186,7 @@ function resolveBodyEncoding(reqBodyEncoding: "utf-8" | null | undefined) {
  * @private
  */
 export function resolveOptions(options: ProxyOptions = {}): ProxyOptions {
-  return {
+  const resolved: ProxyOptions = {
     filterReq: options.filterReq,
     proxyErrorHandler: options.proxyErrorHandler,
     proxyReqUrlDecorator: options.proxyReqUrlDecorator,
@@ -197,4 +202,10 @@ export function resolveOptions(options: ProxyOptions = {}): ProxyOptions {
     headers: options.headers,
     timeout: options.timeout,
   };
+
+  resolved.stream = !resolved.filterRes &&
+    !resolved.srcResDecorator &&
+    !resolved.srcResHeaderDecorator;
+
+  return resolved;
 }

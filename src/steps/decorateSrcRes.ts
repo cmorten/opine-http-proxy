@@ -1,16 +1,12 @@
-// deno-lint-ignore-file no-explicit-any
 import type { ProxyState } from "../createState.ts";
 import { asBuffer } from "../requestOptions.ts";
 
-const defaultDecorator = (
-  _req: any,
-  _res: any,
-  _proxyRes: Response,
-  proxyResData: any,
-) => proxyResData;
-
 export function decorateSrcRes(state: ProxyState) {
-  const resolverFn = state.options.srcResDecorator || defaultDecorator;
+  const resolverFn = state.options.srcResDecorator;
+
+  if (!resolverFn) {
+    return Promise.resolve(state);
+  }
 
   const req = state.src.req;
   const res = state.src.res;
