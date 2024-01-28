@@ -46,7 +46,7 @@ export function createState<
   Res = any,
   Next = any,
   ProxyUrl = string | URL | ProxyUrlFunction<Req>,
-  Opts = ProxyOptions,
+  Opts extends ProxyOptions = ProxyOptions,
 >(
   req: Req,
   res: Res,

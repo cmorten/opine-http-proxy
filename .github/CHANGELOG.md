@@ -1,5 +1,8 @@
 # ChangeLog
 
+For the latest changes, please refer to the
+[releases page](https://github.com/cmorten/superoak/releases).
+
 ## [3.0.2] - 27-08-2022
 
 - feat: update to Deno `1.25.0`, std `0.153.0`
