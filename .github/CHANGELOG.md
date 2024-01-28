@@ -1,7 +1,7 @@
 # ChangeLog
 
 For the latest changes, please refer to the
-[releases page](https://github.com/cmorten/superoak/releases).
+[releases page](https://github.com/cmorten/opine-http-proxy/releases).
 
 ## [3.0.2] - 27-08-2022
 
